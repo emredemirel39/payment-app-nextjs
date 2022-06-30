@@ -22,21 +22,22 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
       break;
 
     case 'POST':
-    try {
+      try {
 
-    const payment = await Payment.create(req.body)
+        const payment = await Payment.create(req.body)
 
-    res
-    .status(201)
-    .json({
-      ReqId: payment._id,
-      Amount: payment.Amount
-    })
+        res
+        .status(201)
+        .json({
+          ReqId: payment._id,
+          Amount: payment.Amount
+        })
       
-    } catch (error) {
-      res.status(500).json(error);
-      console.error(error)
-    }
+      } catch (error) {
+        res.status(500).json(error);
+        console.error(error)
+      }
+     break;
   }
 
 }
