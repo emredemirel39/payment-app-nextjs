@@ -26,11 +26,38 @@
 
 .dateAndCvvBox{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin-left: -3px;
 }
+
+.label{
+  color: #555;
+}
+
+.select{
+  background-color: transparent;
+  outline: none;
+  border: solid #b1b1b1 1.5px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: black;
+  padding-left: 10px;
+
+  width: 120px;
+  height: 40px;
+}
+
+.select:hover{
+  border: solid black 1.5px;
+}
+
+.option{
+  cursor: pointer;
+}
+
+
+
 
 .cardWrapper{
   background-color: #3581b9;
@@ -72,6 +99,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  font-size: 12px;
 }
 
 .cardFullName{
@@ -79,7 +108,7 @@
 }
 
 .cardExptDate{
-  width: 40px;
+  width: fit-content;
 }
 
 .buttonBox{
