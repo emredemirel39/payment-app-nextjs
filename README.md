@@ -1,3 +1,6 @@
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/100750565/176907042-6dc041e8-40d9-4fdb-8b57-898fca021ecb.gif)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
