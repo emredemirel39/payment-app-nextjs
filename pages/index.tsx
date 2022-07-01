@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
+
+import { IPaymentForm } from '../types';
 import type { NextPage } from 'next'
 
 import styles from '../styles/Home.module.css'
 
 import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
-import { IPaymentForm } from '../types';
+
 
 
 
@@ -125,40 +124,58 @@ const Home: NextPage = () => {
       <CssBaseline />
       <Container className={styles.container} maxWidth="lg">
 
-          <form onSubmit={e => handleSubmit(e)} className={styles.form}>
-            <TextField onChange={(e) => handleChange(e)} name='cardNumber' inputProps={{ maxLength: 16 }} fullWidth className={styles.cardNumberInput} id="outlined-basic" label="Card Number" size='small' variant="outlined" />
-            <div className={styles.dateAndCvvBox}>
-
-              <label className={styles.label} >Month</label>
-              <select onChange={(e) => handleChange(e)} className={styles.select} defaultValue='--' name="month">
-                <option disabled>--</option>
-                {
-                  allMonthsFormatted.map((month, i) => <option className={styles.option} key={i} value={month} >{month}</option>)
-                }
-              </select>
-
-              <label className={styles.label} >Year</label>
-              <select onChange={(e) => handleChange(e)} className={styles.select} defaultValue='--' name="year">
-                <option disabled>--</option>
-                {
-                  exptYearVariants.map((year, i) => <option className={styles.option} key={i} value={year} >{year}</option>)
-                }
-              </select>
-
-
-            </div>
-              <TextField onChange={(e) => handleChange(e)} name='cvv' inputProps={{ maxLength: 3 }} className={styles.cvvInput} id="outlined-basic" label="Cvv" size='small' variant="outlined" />
-
-            <FormControl  fullWidth size='small' >
-          <InputLabel className='amount' htmlFor="outlined-adornment-amount">Amount</InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-amount"
-            startAdornment={<InputAdornment position="start">$</InputAdornment>}
-            label="Amount"
-            name='amount'
-            onChange={(e) => handleChange(e)}
+        <form onSubmit={e => handleSubmit(e)} className={styles.form}>
+          <TextField 
+            onChange={(e) => handleChange(e)} 
+            name='cardNumber' 
+            inputProps={{ maxLength: 16 }} 
+            fullWidth 
+            className={styles.cardNumberInput} 
+            id="outlined-basic" 
+            label="Card Number" 
+            size='small' 
+            variant="outlined" 
           />
-        </FormControl>
+          <div className={styles.dateAndCvvBox}>
+
+            <label className={styles.label} >Month</label>
+            <select onChange={(e) => handleChange(e)} className={styles.select} defaultValue='--' name="month">
+              <option disabled>--</option>
+              {
+                allMonthsFormatted.map((month, i) => <option className={styles.option} key={i} value={month} >{month}</option>)
+              }
+            </select>
+
+            <label className={styles.label} >Year</label>
+            <select onChange={(e) => handleChange(e)} className={styles.select} defaultValue='--' name="year">
+              <option disabled>--</option>
+              {
+                exptYearVariants.map((year, i) => <option className={styles.option} key={i} value={year} >{year}</option>)
+              }
+            </select>
+
+          </div>
+          <TextField 
+            onChange={(e) => handleChange(e)} 
+            name='cvv' 
+            inputProps={{ maxLength: 3 }} 
+            className={styles.cvvInput} 
+            id="outlined-basic" 
+            label="Cvv" 
+            size='small' 
+            variant="outlined"
+          />
+
+          <FormControl  fullWidth size='small' >
+            <InputLabel className='amount' htmlFor="outlined-adornment-amount">Amount</InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-amount"
+              startAdornment={<InputAdornment position="start">$</InputAdornment>}
+              label="Amount"
+              name='amount'
+              onChange={(e) => handleChange(e)}
+            />
+            </FormControl>
 
           <div className={styles.buttonBox}>
             <button disabled={isValid ? false : true } >Submit</button>
@@ -173,9 +190,7 @@ const Home: NextPage = () => {
               </div>
               <p className={styles.creditCardNumber} >
                 {
-
-                  form.cardNumber ? form.cardNumber : '****************'
-                  
+                  form.cardNumber ? form.cardNumber : '****************'     
                 }
               </p>
               <div className={styles.cardBottomWrapper}>
@@ -187,9 +202,7 @@ const Home: NextPage = () => {
                 </p>              
               </div>
             </div>
-            
           </div>
-
     </Container>
   </div >
   )
