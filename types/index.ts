@@ -1,7 +1,7 @@
 export interface IPaymentForm {
     cardNumber: string,
     cvv: string,
-    amount: '',
-    year: '',
-    month: ''
+    amount: string,
+    year: string,
+    month: string
 }
